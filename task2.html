@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Function</title>
+</head>
+
+<body>
+    Please open console
+    <script>
+        //Print odd numbers in an array (IIFE & arrow function)
+        ((input_array) => {
+            for (let incr = 0; incr < input_array.length; incr++) {
+                if (input_array[incr] % 2 != 0) {
+                    console.log(input_array[incr])
+                }
+            }
+        })([1, 2, 3, 4, 5, 67, 8, 9])
+
+
+            //Convert all the strings to title caps in a string array (IIFE & arrow function)
+            ((_string) => {
+                char_array = _string.split('');
+                result = ""
+                for (let incr = 0; incr < char_array.length; incr++) {
+                    if (incr == 0) {
+                        result += char_array[incr].toUpperCase()
+                    } else if (char_array[incr - 1] == ' ') {
+                        result += char_array[incr].toUpperCase()
+                    } else {
+                        result += char_array[incr].toLowerCase()
+                    }
+                }
+                console.log(result);
+            })("hello world, JavaScript!, You rock star!")
+
+        //Sum of all numbers in an array (IIFE & arrow function)
+        tst.filter((item) => item % 2 != 0).reduce((total, current) => total + current, 0)
+            (
+                (input) => {
+                    let sum = 0;
+                    for (incr = 0; incr < input.length; incr++) {
+                        if (input[incr] % 2 != 0)
+                            sum += input[incr]
+                    }
+                    console.log(sum)
+                }
+
+            )([1, 2, 3, 4, 5, 6, 78, 9])
+
+            //Return all the prime numbers in an array (IIFE & arrow function)
+            ((input_array) => {
+                for (let incr = 0; incr < input_array.length; incr++) {
+                    let found = true;
+                    for (let check = 2; check < input_array[incr]; check++) {
+                        if (input_array[incr] % check == 0) {
+                            found = false;
+                            break;
+                        }
+                    }
+                    if (found) console.log(input_array[incr]);
+                }
+            })([1, 3, 5, 67, 8, 9, 3, 4, 56, 4, 3, 3, 4, 5, 6, 76, 5, 43, 3, 3, 33])
+
+
+            //Return all the palindromes in an array (IIFE & arrow function)
+            ((input_array) => {
+                for (let incr = 0; incr < input_array.length; incr++) {
+                    char_array = input_array[incr].toString().split('')
+                    reverse = ""
+                    for (let decr = char_array.length - 1; decr >= 0; decr--) {
+                        reverse += char_array[decr]
+                    }
+                    if (reverse == input_array[incr]) {
+                        console.log(input_array[incr])
+                    }
+                }
+            })(["amma", 22, "appa", "test", 12, 33, 55, "trail"])
+
+    </script>
+</body>
+
+</html>
